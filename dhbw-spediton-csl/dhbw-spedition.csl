@@ -1,60 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0">
-<info>
-  <title>DHBW Spedition und Logistik</title>
-  <id>https://github.com/pewdsyx/zotero_custom_csl/tree/main/dhbw-spediton-csl</id>
-  <link href="https://github.com/pewdsyx/zotero_custom_csl/tree/main/dhbw-spediton-csl" rel="self"/>
-  <link href="https://github.com/pewdsyx/zotero_custom_csl/blob/main/dhbw-spediton-csl/README.md" rel="documentation"/>
-  <author>
-    <name>Yves Staudenmaier</name>
-    <email>yves.staudenmaier@mailbox.org</email>
-    <uri>https://github.com/pewdsyx</uri>
-  </author>
-  <category field="business administration"/>
-  <updated>2023-10-30T12:05:00+0100</updated>
-  <rights license="https://opensource.org/license/mit/">This work
-  is licensed under a MIT license.</rights>
-</info>
+    <info>
+        <title>DHBW Spedition und Logistik</title>
+        <id>https://github.com/pewdsyx/zotero_custom_csl/tree/main/dhbw-spediton-csl</id>
+        <link href="https://github.com/pewdsyx/zotero_custom_csl/tree/main/dhbw-spediton-csl" rel="self"/>
+        <link href="https://github.com/pewdsyx/zotero_custom_csl/blob/main/dhbw-spediton-csl/README.md" rel="documentation"/>
+        <author>
+            <name>Yves Staudenmaier</name>
+            <email>yves.staudenmaier@mailbox.org</email>
+            <uri>https://github.com/pewdsyx</uri>
+        </author>
+        <category field="social_science"/>
+        <updated>2023-10-30T08:20:45.678Z</updated>
+        <rights license="https://opensource.org/license/mit/">This work is licensed under a MIT license.</rights>
+    </info>
 
-    <!-- Citation Format -->
+    <!-- Define Author List Macro -->
+    <macro name="author-list">
+        <names variable="author">
+            <name delimiter=", " delimiter-precedes-last="always" initialize-with=". " name-as-sort-order="all" sort-separator=" "/>
+            <label form="short" plural="contextual" text="et al."/>
+        </names>
+    </macro>
+
+    <!-- Define Citation Format -->
     <citation>
         <layout delimiter=" ">
-            <!-- Optional User-defined Prefix -->
             <text variable="prefix" prefix=" "/>
-
-            <!-- Authors -->
             <group delimiter=", ">
                 <text macro="author-list"/>
             </group>
-
-            <!-- Publication Date with Counter for Same Year Publications -->
             <group delimiter=" ">
-                <text variable="issued" form="text"/>
-                <text macro="same-year-counter"/>
+                <text variable="issued"/>
+                <choose>
+                    <if type="webpage">
+                        <text variable="accessed" prefix=", Accessed "/>
+                    </if>
+                    <else-if type="hearing">
+                        <group delimiter=" ">
+                            <text value="Expertengespräch"/>
+                            <text variable="author" prefix=" "/>
+                            <text variable="position" prefix=" "/>
+                            <text variable="company" prefix=" "/>
+                            <text variable="location" prefix=" "/>
+                            <text variable="issued" prefix=" "/>
+                        </group>
+                    </else-if>
+                    <else>
+                        <text variable="page" prefix=", S. "/>
+                    </else>
+                </choose>
             </group>
-
-            <!-- Access Date for Websites -->
-            <choose>
-                <if type="webpage">
-                    <text variable="accessed" prefix=", Accessed "/>
-                </if>
-                <else-if type="hearing">
-                    <!-- Hearing Citation Format -->
-                    <text value="Expertengespräch"/>
-                    <text variable="author" prefix=" "/>
-                    <text variable="position" prefix=" "/>
-                    <text variable="company" prefix=" "/>
-                    <text variable="location" prefix=" "/>
-                    <text variable="issued" form="text" prefix=" "/>
-                </else-if>
-                <else>
-                    <!-- Pages or 'Online' for Other Types of Publications -->
-                    <text variable="page" prefix=", S. "/>
-                </else>
-            </choose>
-
-            <!-- End with a Period -->
-            <text term="ending"/>
+            <text term="period"/>
         </layout>
     </citation>
 
@@ -77,9 +74,6 @@
                 <else-if type="thesis">
                     <text macro="dissertation"/>
                 </else-if>
-                <else-if type="loose-leaf">
-                    <text macro="loose-leaf"/>
-                </else-if>
                 <else-if type="webpage">
                     <text macro="website"/>
                 </else-if>
@@ -90,26 +84,6 @@
             <text term="ending"/>
         </layout>
     </bibliography>
-
-    <!-- Define Author List Macro -->
-    <macro name="author-list">
-        <names variable="author">
-            <name and="symbol" delimiter=", " delimiter-precedes-last="always" initialize-with=". " name-as-sort-order="all" sort-separator=" "/>
-            <label form="short" plural="contextual" text="et al."/>
-        </names>
-    </macro>
-
-    <!-- Define Same Year Counter Macro -->
-    <macro name="same-year-counter">
-        <choose>
-            <if type="book">
-                <text term="letter" form="lowercase"/>
-            </if>
-            <else-if type="article">
-                <text term="roman" form="lowercase"/>
-            </else-if>
-        </choose>
-    </macro>
 
     <!-- Define Monograph Macro -->
     <macro name="monograph">
@@ -170,22 +144,6 @@
             <text term="in" text=", "/>
             <text term="dissertation"/>
             <text variable="publisher-place"/>
-        </group>
-    </macro>
-
-    <!-- Define Loose-leaf Macro -->
-    <macro name="loose-leaf">
-        <group delimiter=" ">
-            <text macro="author-list"/>
-            <text variable="issued" prefix=" (" suffix="): "/>
-            <text variable="title"/>
-            <text term="in" text=", in: "/>
-            <text macro="editor"/>
-            <text variable="container-title"/>
-            <text variable="chapter" prefix=" (" suffix=")"/>
-            <text term="loose-leaf"/>
-            <text variable="publisher-place"/>
-            <text variable="publisher"/>
         </group>
     </macro>
 
