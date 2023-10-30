@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0">
-    <info>
-        <title>DHBW Citaiton Style complying with Richtlinien für das Anfertigen von Projekt- und Bachelorarbeiten Fakultät für Wirtschaft Studienrichtung Spedition, Transport und Logistik</title>
-        <author>
-            <name>Yves T. Staudenmaier</name>
-            <email>yves.staudenmaier@mailbox.org</email>
-        </author>
-    </info>
+<info>
+  <title>DHBW Spedition und Logistik</title>
+  <id>https://github.com/pewdsyx/zotero_custom_csl/tree/main/dhbw-spediton-csl</id>
+  <link href="https://github.com/pewdsyx/zotero_custom_csl/tree/main/dhbw-spediton-csl" rel="self"/>
+  <link href="https://github.com/pewdsyx/zotero_custom_csl/blob/main/dhbw-spediton-csl/README.md" rel="documentation"/>
+  <author>
+    <name>Yves Staudenmaier</name>
+    <email>yves.staudenmaier@mailbox.org</email>
+    <uri>https://github.com/pewdsyx</uri>
+  </author>
+  <category field="business administration"/>
+  <updated>2023-10-30T12:05:00+0100</updated>
+  <rights license="https://opensource.org/license/mit/">This work
+  is licensed under a MIT license.</rights>
+</info>
 
     <!-- Citation Format -->
     <citation>
