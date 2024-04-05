@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="never">
+  <!-- This style was edited with the Visual CSL Editor (https://editor.citationstyles.org/visualEditor/) -->
+  <info>
+    <title>DHBW Spedition und Logistik</title>
+    <id>http://www.zotero.org/styles/dhbw-spedition-und-logistik</id>
+    <link rel="self" href="http://www.zotero.org/styles/dhbw-spedition-und-logistik"/>
+    <author>
+      <name>Yves Staudenmaier</name>
+      <email>yves.staudenmaier@mailbox.org</email>
+      <uri>https://github.com/pewdsyx</uri>
+    </author>
+    <published>2023-10-30T08:20:45.678Z</published>
+    <updated>2023-10-30T11:23:03+00:00</updated>
+    <rights>MIT</rights>
+  </info>
+  <citation>
+    <layout/>
+  </citation>
+  <bibliography>
+    <layout/>
+  </bibliography>
+</style>

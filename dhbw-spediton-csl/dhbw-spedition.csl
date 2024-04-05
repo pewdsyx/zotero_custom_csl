@@ -1,173 +1,170 @@
-<?xml version="1.0" encoding="utf-8"?>
-<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0">
-    <info>
-        <title>DHBW Spedition und Logistik</title>
-        <id>https://github.com/pewdsyx/zotero_custom_csl/tree/main/dhbw-spediton-csl</id>
-        <link href="https://github.com/pewdsyx/zotero_custom_csl/tree/main/dhbw-spediton-csl" rel="self"/>
-        <link href="https://github.com/pewdsyx/zotero_custom_csl/blob/main/dhbw-spediton-csl/README.md" rel="documentation"/>
-        <author>
-            <name>Yves Staudenmaier</name>
-            <email>yves.staudenmaier@mailbox.org</email>
-            <uri>https://github.com/pewdsyx</uri>
-        </author>
-        <category field="social_science"/>
-        <updated>2023-10-30T08:20:45.678Z</updated>
-        <rights license="https://opensource.org/license/mit/">This work is licensed under a MIT license.</rights>
-    </info>
-
-    <!-- Define Author List Macro -->
-    <macro name="author-list">
-        <names variable="author">
-            <name delimiter=", " delimiter-precedes-last="always" initialize-with=". " name-as-sort-order="all" sort-separator=" "/>
-            <label form="short" plural="contextual" text="et al."/>
-        </names>
-    </macro>
-
-    <!-- Define Citation Format -->
-    <citation>
-        <layout delimiter=" ">
-            <text variable="prefix" prefix=" "/>
-            <group delimiter=", ">
-                <text macro="author-list"/>
-            </group>
-            <group delimiter=" ">
-                <text variable="issued"/>
-                <choose>
-                    <if type="webpage">
-                        <text variable="accessed" prefix=", Accessed "/>
-                    </if>
-                    <else-if type="hearing">
-                        <group delimiter=" ">
-                            <text value="Expertengespräch"/>
-                            <text variable="author" prefix=" "/>
-                            <text variable="position" prefix=" "/>
-                            <text variable="company" prefix=" "/>
-                            <text variable="location" prefix=" "/>
-                            <text variable="issued" prefix=" "/>
-                        </group>
-                    </else-if>
-                    <else>
-                        <text variable="page" prefix=", S. "/>
-                    </else>
-                </choose>
-            </group>
-            <text term="period"/>
-        </layout>
-    </citation>
-
-    <!-- Bibliography Format -->
-    <bibliography>
-        <sort>
-            <key variable="author"/>
-        </sort>
-        <layout>
-            <choose>
-                <if type="book">
-                    <text macro="monograph"/>
-                </if>
-                <else-if type="chapter">
-                    <text macro="contribution"/>
-                </else-if>
-                <else-if type="article">
-                    <text macro="essay"/>
-                </else-if>
-                <else-if type="thesis">
-                    <text macro="dissertation"/>
-                </else-if>
-                <else-if type="webpage">
-                    <text macro="website"/>
-                </else-if>
-                <else-if type="hearing">
-                    <text macro="hearing"/>
-                </else-if>
-            </choose>
-            <text term="ending"/>
-        </layout>
-    </bibliography>
-
-    <!-- Define Monograph Macro -->
-    <macro name="monograph">
-        <group delimiter=" ">
-            <text macro="author-list"/>
-            <text variable="issued" prefix=" (" suffix="): "/>
-            <text variable="title"/>
-            <text macro="edition"/>
-            <text macro="editor"/>
-            <text variable="publisher-place"/>
-            <text variable="publisher"/>
-        </group>
-    </macro>
-
-    <!-- Define Edition Macro -->
-    <macro name="edition">
-        <choose>
-            <if variable="edition">
-                <text variable="edition" prefix=", "/>
-            </if>
-        </choose>
-    </macro>
-
-    <!-- Define Contribution Macro -->
-    <macro name="contribution">
-        <group delimiter=" ">
-            <text macro="author-list"/>
-            <text variable="issued" prefix=" (" suffix="): "/>
-            <text variable="title"/>
-            <text term="in" text=", in: "/>
-            <text macro="editor"/>
-            <text variable="container-title"/>
-            <text variable="publisher-place"/>
-            <text variable="publisher"/>
-            <text variable="page" prefix=", S. "/>
-        </group>
-    </macro>
-
-    <!-- Define Essay Macro -->
-    <macro name="essay">
-        <group delimiter=" ">
-            <text macro="author-list"/>
-            <text variable="issued" prefix=" (" suffix="): "/>
-            <text variable="title"/>
-            <text term="in" text=", in: "/>
-            <text variable="container-title"/>
-            <text variable="volume" prefix=" (" suffix=")"/>
-            <text variable="page" prefix=", S. "/>
-        </group>
-    </macro>
-
-    <!-- Define Dissertation Macro -->
-    <macro name="dissertation">
-        <group delimiter=" ">
-            <text macro="author-list"/>
-            <text variable="issued" prefix=" (" suffix="): "/>
-            <text variable="title"/>
-            <text term="in" text=", "/>
-            <text term="dissertation"/>
-            <text variable="publisher-place"/>
-        </group>
-    </macro>
-
-    <!-- Define Website Macro -->
-    <macro name="website">
-        <group delimiter=" ">
-            <text macro="author-list"/>
-            <text variable="issued" prefix=" (" suffix="): "/>
-            <text variable="title"/>
-            <text prefix=", URL: "/>
-            <text variable="URL"/>
-            <text prefix=", Accessed "/>
-            <text variable="accessed"/>
-        </group>
-    </macro>
-
-    <!-- Define Hearing Macro -->
-    <macro name="hearing">
-        <group delimiter=" ">
-            <text macro="author-list"/>
-            <text variable="position" prefix=", "/>
-            <text variable="company" prefix=", "/>
-            <text variable="location" prefix=", "/>
-            <text variable="issued" prefix=", "/>
-        </group>
-    </macro>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<style class="in-text" version="1.0" et-al-min="3" et-al-use-first="1" xmlns="http://purl.org/net/xbiblio/csl">
+  <!-- This style was edited with the Visual CSL Editor (https://editor.citationstyles.org/visualEditor/) -->
+  <info>
+    <title>DHBW Spedition und Logistik</title>
+    <id>http://www.zotero.org/styles/dhbw-spedition-und-logistik</id>
+    <link href="http://www.zotero.org/styles/dhbw-spedition-und-logistik" rel="self"/>
+    <link href="https://github.com/pewdsyx/zotero_custom_csl/blob/main/dhbw-spediton-csl/README.md" rel="documentation"/>
+    <author>
+      <name>Yves Staudenmaier</name>
+      <email>yves.staudenmaier@mailbox.org</email>
+      <uri>https://github.com/pewdsyx</uri>
+    </author>
+    <category field="social_science"/>
+    <updated>2023-10-30T12:07:37+00:00</updated>
+    <rights license="https://opensource.org/license/mit/">This work is licensed under a MIT license.</rights>
+  </info>
+  <macro name="author-list">
+    <names variable="author">
+      <name delimiter=", " delimiter-precedes-last="always" initialize-with=". " name-as-sort-order="all" sort-separator=" "/>
+      <et-al/>
+    </names>
+  </macro>
+  <citation>
+    <layout delimiter=" ">
+      <text variable="author" prefix="(" suffix=")"/>
+      <text variable="issued"/>
+      <choose>
+        <if type="webpage">
+          <text variable="title" prefix=", " suffix=". [Online]"/>
+          <text variable="URL" prefix="Available at: "/>
+          <text variable="accessed" prefix=" Accessed "/>
+        </if>
+        <else-if type="hearing">
+          <text variable="title" prefix=", "/>
+          <text macro="author-list"/>
+          <text variable="position" prefix=" "/>
+          <text variable="company" prefix=" "/>
+          <text variable="location" prefix=" "/>
+          <text variable="issued"/>
+        </else-if>
+        <else>
+          <text variable="title" prefix=", "/>
+          <text variable="container-title"/>
+          <text variable="page" prefix=" (p. "/>
+          <text term="period"/>
+        </else>
+      </choose>
+    </layout>
+  </citation>
+  <bibliography>
+    <sort>
+      <key variable="author"/>
+    </sort>
+    <layout>
+      <text macro="author-list" prefix="("/>
+      <text variable="issued"/>
+      <choose>
+        <if type="book">
+          <text macro="monograph"/>
+        </if>
+        <else-if type="chapter">
+          <text macro="contribution"/>
+        </else-if>
+        <else-if type="article">
+          <text macro="essay"/>
+        </else-if>
+        <else-if type="thesis">
+          <text macro="dissertation"/>
+        </else-if>
+        <else-if type="webpage">
+          <text macro="website"/>
+        </else-if>
+        <else-if type="hearing">
+          <text macro="hearing"/>
+        </else-if>
+      </choose>
+      <text term="period"/>
+    </layout>
+  </bibliography>
+  <macro name="monograph">
+    <group delimiter=" ">
+      <text macro="author-list"/>
+      <text variable="issued" prefix=" (" suffix="): "/>
+      <text variable="title"/>
+      <text macro="edition"/>
+      <text macro="editor"/>
+      <text variable="publisher-place"/>
+      <text variable="publisher"/>
+    </group>
+  </macro>
+  <macro name="edition">
+    <choose>
+      <if variable="edition">
+        <text variable="edition" prefix=", "/>
+      </if>
+    </choose>
+  </macro>
+  <macro name="contribution">
+    <group delimiter=" ">
+      <text macro="author-list"/>
+      <text variable="issued" prefix=" (" suffix="): "/>
+      <text variable="title"/>
+      <text term="in" text=", in: "/>
+      <text macro="editor"/>
+      <text variable="container-title"/>
+      <text variable="publisher-place"/>
+      <text variable="publisher"/>
+      <text variable="page" prefix=", S. "/>
+    </group>
+  </macro>
+  <macro name="essay">
+    <group delimiter=" ">
+      <text macro="author-list"/>
+      <text variable="issued" prefix=" (" suffix="): "/>
+      <text variable="title"/>
+      <text term="in" text=", in: "/>
+      <text variable="container-title"/>
+      <text variable="volume" prefix=" (" suffix=")"/>
+      <text variable="page" prefix=", S. "/>
+    </group>
+  </macro>
+  <macro name="dissertation">
+    <group delimiter=" ">
+      <text macro="author-list"/>
+      <text variable="issued" prefix=" (" suffix="): "/>
+      <text variable="title"/>
+      <text term="in" text=", "/>
+      <text term="dissertation"/>
+      <text variable="publisher-place"/>
+    </group>
+  </macro>
+  <macro name="loose-leaf">
+    <group delimiter=" ">
+      <text macro="author-list"/>
+      <text variable="issued" prefix=" (" suffix="): "/>
+      <text variable="title"/>
+      <text term="in" text=", in: "/>
+      <text macro="editor"/>
+      <text variable="container-title"/>
+      <text variable="chapter" prefix=" (" suffix=")"/>
+      <text term="loose-leaf"/>
+      <text variable="publisher-place"/>
+      <text variable="publisher"/>
+    </group>
+  </macro>
+  <macro name="website">
+    <group delimiter=" ">
+      <text macro="author-list"/>
+      <text variable="issued" prefix=" (" suffix="): "/>
+      <text variable="title"/>
+      <text term="in" text=", in: "/>
+      <text macro="editor"/>
+      <text variable="container-title"/>
+      <text variable="publisher-place"/>
+      <text variable="publisher"/>
+      <text variable="accessed" prefix=", Accessed "/>
+    </group>
+  </macro>
+  <macro name="hearing">
+    <group delimiter=" ">
+      <text term="expertengespräch"/>
+      <text macro="author-list"/>
+      <text variable="position" prefix=" "/>
+      <text variable="company" prefix=" "/>
+      <text variable="location" prefix=" "/>
+      <text variable="issued" prefix=" "/>
+    </group>
+  </macro>
 </style>
